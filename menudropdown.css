@@ -1,0 +1,282 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+a:link{
+    color: rgb(246, 246, 247);
+}
+a:hover{
+    color: white;
+}
+.web{
+    
+    display: block;
+    padding: 10px;
+    margin:10px
+    
+}
+.mobile{
+    display: none;
+}
+.logo{
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 1px 5px rgb(157, 157, 197) ;
+    height: 40px;
+    text-align: left;
+    margin-right: 30%;
+ 
+}
+.ulprincipal{
+    font-size: 17px;
+    display: inline-flex;
+    margin-right: 2%;
+    color: rgb(27, 27, 137);  
+    z-index:1;
+    width: 100%;
+}
+.liprincipal{
+    line-height: 40px;
+    list-style: none;
+}
+.dropcalculadoras{
+    /*background-image: linear-gradient( rgb(0, 0, 0) , rgb(183, 0, 255));*/
+    text-align: center;
+    padding: 12px; 
+    background-color: black;
+    
+}
+.dropcalculadoras:hover{
+    background-image: linear-gradient( rgb(83, 91, 147) , rgb(168, 170, 170));
+    color: white;
+    border-radius: 5px;
+}
+.ulsecundario{
+    font-size: 17px;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background-image: linear-gradient( rgb(198, 220, 231) , rgb(228, 248, 250));
+    margin-left: -110px;
+    width: 250px;
+    box-shadow: 0px 3px 10px rgb(157, 157, 197) ;
+    margin-top: -5px;
+}
+.lisecundario{
+    padding: 5px;
+    list-style: none;
+    font-size: 15px;
+    text-align: center;
+    line-height: 25px;
+    margin: 0px;
+
+}
+.liprincipal.active ,:hover ~ .ulsecundario{
+    display: block;
+    list-style: none;
+}
+/*continuar com o menu aberto mesmo sainda do hover acima*/
+.ulsecundario:hover {
+    display: block;
+    list-style: none;
+    position: absolute; 
+    border-radius: 5px;
+}
+.lisecundario:hover{
+    background-image: linear-gradient( rgb(83, 91, 147) , rgb(168, 170, 170));
+    text-align: center;
+    color: whitesmoke;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 5px;
+}
+.label_dropdown{
+    background-image: linear-gradient(to right, rgb(9, 3, 175) , rgb(112, 131, 244));
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+@media(max-width: 700px){
+    .web{
+        display: none;
+    }
+    .mobile{
+        background-image: linear-gradient( rgb(0, 0, 0) , rgb(76, 1, 105));
+        text-align: left;
+        box-shadow: 0px 0px 0px 0px rgb(157, 157, 197) ;
+        border-radius: 2px;
+        margin-left: 0px;
+        margin-right: 0px;
+        width:100%;
+        display:block;
+        height: 30px;
+        padding-top: 10px;
+        margin-top: 0px;
+    }
+    .logo{
+        list-style: none;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+        text-shadow: 0px 1px 5px rgb(157, 157, 197) ;
+        margin-left: 35%;
+        display:inline-block;
+        padding: 0px;
+        margin-bottom: 0px;
+        height: 40px;
+        color: white;
+        width: 200px;
+        
+    }
+    .menu{
+        display:relative;
+        opacity: 100%;
+        margin-left: 20px;
+        padding-right: 20px; 
+        position:absolute;
+        width: 25px;
+        height: 25px;
+        transition:  opacity 0.6s;
+           
+    }
+    .menuv{
+        display: relative;
+        margin-left:20px;
+        padding-right: 20px;
+        position:absolute;
+        width: 20px;
+        height: 20px;
+        transition: opacity 0.9s;
+        opacity: 0%;
+        
+    }
+    .ulprincipal{
+        width: 100%;
+        font-size: 14px;
+        display: block;
+        text-align: center;
+        position: relative;
+        margin-right: 0px;
+        margin-left: -100%;
+        transition: margin-left 0.9s;
+        margin-top: 0px;
+        
+
+        
+        
+    }
+    .radio:checked ~ .ulprincipal{
+        font-size: 14px;
+        display:block;
+        margin-right: 0px;
+        color: rgb(27, 27, 137);
+        position:relative;
+        margin-left: 0%;
+        transition: margin-left 0.6s;
+        
+    }
+    .radio{
+        filter: opacity(0%);
+        margin-left: 10px;
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        z-index: 1;
+    }
+    .radio:checked ~ .menu{
+        opacity: 0%;
+
+         
+    }
+    .radio:checked ~ .menuv{
+        opacity: 100%;   
+    }
+    .radio-li{
+        filter: opacity(10%);
+        display: none;
+    }
+    .radio-li:checked ~ .ulsecundario{
+        display: block;
+        
+    }
+    .liprincipal{
+        line-height: 17px;
+        list-style: none;
+        width: 100%;
+        margin-top: 0px; 
+        margin: 0px;
+        border-bottom: 2px solid rgb(184, 3, 245);
+    }
+    .dropcalculadoras{
+        /*background-image: linear-gradient( rgb(0, 0, 0) , rgb(76, 1, 100));*/
+        text-align: center;
+        margin: 0px;
+        position: relative;
+        display:block;
+        
+    }
+    .dropcalculadoras:hover{
+        background-image: linear-gradient( rgb(83, 91, 147) ,rgb(132, 14, 201));
+        color: white;
+        border-radius: 5px;
+        position:relative;
+        display: block;
+        
+    }
+    .ulsecundario{
+        font-size: 18px;
+        display:none;
+        position:relative;
+        background-image: linear-gradient( rgb(198, 220, 231) , rgb(228, 248, 250));
+        margin-left: 0px;
+        margin: 0px;
+        width: 100%;
+        box-shadow: 0px 3px 10px rgb(157, 157, 197) ;
+        border-bottom: 2px solid white;
+    }
+    .lisecundario{
+        padding: 5px;
+        list-style: none;
+        font-size: 14px;
+        text-align: left;
+        line-height: 20px;
+        margin: 0px;
+        width: 100%;
+        border-bottom: 2px solid white;
+    
+    }
+    .liprincipal.active ,:hover ~ .ulsecundario{
+        display: block;
+        list-style: none;
+    }
+    /*continuar com o menu aberto mesmo sainda do hover acima*/
+    .ulsecundario:hover {
+        display: block;
+        list-style: none;
+        position: relative; 
+        border-radius: 3px;
+    }
+    
+    .lisecundario:hover{
+        background-image: linear-gradient( rgb(83, 91, 147) ,rgb(132, 14, 201));
+        text-align: left;
+        color: white;
+        font-size: 13px;
+        border-radius: 3px; 
+    }
+    .label_dropdown{
+        background-image: linear-gradient(to right, rgb(9, 3, 175) , rgb(112, 131, 244));
+        color: white;
+        font-size: 8px;
+        width: 99%;
+        text-align: center;
+        border-radius: 2px;
+    }
+}
