@@ -2,17 +2,18 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Cadastro</title>
-    <link rel="stylesheet" href="components/_css/estilo.css">
-
+    <link rel="stylesheet" href="components/_css/style.css">
+    <link rel="stylesheet" href="menudropdown.css">
 </head>
 
 <body>
 
 
-<?php
+<!--<?php
 
 include_once("conexao.php");
 
@@ -20,30 +21,78 @@ $filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
 $sql = "select * from usuarios where servico='$filtro'";
 $consulta = mysqli_query($conexao,$sql);
 $registros = mysqli_num_rows($consulta);
-?>
-
-
-   
-
-		
+?>-->
+    <header>
+        <div id="title">
+            <div class="title1">
+                <h1 id="logo">DHEL</h1>
+            </div>
+            <div class="title1">
+                <h3></h3>
+            </div>
+        </div>
+        <nav class="web">
+            <ul style="width: 500px;">
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="index.html" >Início</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="servico.html" >Serviços</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="http://localhost/dhel/index.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="http://localhost/dhel/cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
+                
+                </li>
+                
+            </ul>
+        </nav>
+       
+        <nav class="mobile" style="z-index:10 ; clear: both;">
+                <input type="checkbox" name="radio-btn" class="radio">
+                <img src="components/images/menu_horizontal.png" class="menu">
+                <img src="components/images/menu_vertical.png" class="menuv" >
+                <a href="default.php" class="logo">Cabeleireiros Unissex</a>
+            
+            <ul class="ulprincipal">
+                <li class="liprincipal">
+                    <a href="index.html" class="dropcalculadoras">Início</a>
+                </li>
+                <li class="liprincipal">
+                    <a href="servico.html" class="dropcalculadoras">Serviços</a>
+                </li>   
+                <li class="liprincipal">
+                    <a href="http://localhost/dhel/index.php" target="_blank" class="dropcalculadoras">Agendar um horário</a> 
+                </li>
+                <li class="liprincipal">
+                    <a href="http://localhost/dhel/cadastro.php" target="_blank"  class="dropcalculadoras">Cadastre-se</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+	<br>	
     <div class="container">
 
-			<section>
-			<h1>Agendamento de Serviço</h1>
+		<section>
+			<h1 class="texth1">Agendamento de Serviço</h1>
             
             <hr><br><br>
 			<h3>Selecione o Serviço desejado para ver os horários reservados:</h3>
-         <form method="get" action="">
-			<input type="radio" name='servico' value='a-b-Cabelo'/> Cabelo<br>
-			<input type='radio' name='servico' value='c-d-Unha'/> Unha<br>
-			<input type='radio' name='servico' value='e-f-Sobrancelha'/> Sobrancelha<br>
-			
-			<input type="hidden" name="filtro" class="campo" id="valor" placeholder="" value="" />
-			
-			<input type="submit" value="Ver Horários" class="btn">
-		</form>
+            <form method="get" action="">
+                <input type="radio" name='servico' value='a-b-Cabelo'/> Cabelo<br>
+                <input type='radio' name='servico' value='c-d-Unha'/> Unha<br>
+                <input type='radio' name='servico' value='e-f-Sobrancelha'/> Sobrancelha<br>
+                <input type="hidden" name="filtro" class="campo" id="valor" placeholder="" value="" />
+                <input type="submit" value="Ver Horários" class="btn">
+            </form>
 
-            <?php
+            <!--<?php
                 print "Você escolheu:<strong> $filtro</strong><br>";
                 print "Horários Reservados: <strong>$registros</strong><br>" ;
                               
@@ -59,12 +108,12 @@ $registros = mysqli_num_rows($consulta);
                
                 mysqli_close($conexao);
                 
-                ?>
+                ?>-->
 
             <hr><br><br>
 			<h3>Preencha todos os campos do formulário baixo:</h3>
            
-				<form method="post" action="processa.php">
+				<form method="post" action="processa.php" class="formulario">
                <strong> Selecione o tipo de Serviço</strong><br>
                 <input type="radio" name="servico" value="Cabelo" />
                 Cabelo
@@ -92,10 +141,10 @@ $registros = mysqli_num_rows($consulta);
 
 
                 <select name="horario">
-                    <option type="time" value="9:00"class="campo" maxlength="5" required>9:00</option>
-                    <option type="time" value="9:30" class="campo" maxlength="5" required>9:30</option>
-                    <option type="time" value="10:00" class="campo" maxlength="5" required>10:00</option>
-                    <option type="time" value="10:30" class="campo" maxlength="5" required>10:30</option>
+                   <option type="time" value="9:00"class="campo" maxlength="5" required>9:00</option>
+                   <option type="time" value="9:30" class="campo" maxlength="5" required>9:30</option>
+                   <option type="time" value="10:00" class="campo" maxlength="5" required>10:00</option>
+                   <option type="time" value="10:30" class="campo" maxlength="5" required>10:30</option>
                    <option type="time" value="11:00" class="campo" maxlength="5" required>11:00</option>
                    <option type="time" value="11:30" class="campo" maxlength="5" required>11:30</option>
                    <option type="time" value="12:00" class="campo" maxlength="5" required>12:00</option>
@@ -131,7 +180,5 @@ for(var x=0; x<radios.length; x++){
 }
 
 </script>
-
 </body>
-
 </html>

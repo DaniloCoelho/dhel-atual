@@ -7,8 +7,10 @@ a {
     text-decoration: nome;
     color: #fff;
 }
-
-body {
+.texth1{
+    font-size: 30px;
+}
+#body {
     background-color: #222;
     font-family: Verdana;
     font-size: 100%
@@ -17,12 +19,12 @@ body {
 .container {
     flex-direction: column;
     margin: auto;
-    width: 1200px;
+    width: 80%;
     margin-top: 20px;
     padding: 10px;
 }
 
-nav {
+#nav {
     width: 300px;
     height: 500px;
     background-color: #444;
@@ -32,7 +34,7 @@ nav {
 }
 
 section {
-    width: 870px;
+    width: 80%;
     height: 500px;
     margin-left: 10px;
     float: left;
@@ -41,11 +43,11 @@ section {
     padding-left: 10px;
 }
 
-ul.menu li {
+#ul.menu li {
     list-style-type: nome;
 }
 
-ul.menu li {
+#ul.menu li {
     width: 250px;
     height: 50px;
     line-height: 50px;
@@ -57,7 +59,7 @@ ul.menu li {
 }
 
 .btn {
-    width: 100px;
+    width: 50px;
     height: 30px;
     border: 1px solid #ddd;
     background-color: #0000FF;
@@ -79,4 +81,91 @@ article {
     padding: 10px;
     background-color: #d6d5d5;
     margin-bottom: 5px;
+}
+
+@media(max-width: 700px){
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #a {
+        text-decoration: nome;
+        color: #fff;
+    }
+    
+    #body {
+        background-color: #222;
+        font-family: Verdana;
+        font-size: 10%
+    }
+    .texth1{
+        font-size: 18px;
+    }
+    .container {
+        flex-direction: column;
+        margin: auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    #nav {
+        width: 300px;
+        height: 500px;
+        background-color: #444;
+        float: left;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    
+    section {
+        width: 100%;
+         
+        margin-left: 5px;
+        float: left;
+        background-color: #fff;
+        box-sizing: border-box;
+        padding-left: 5px;
+    }
+    
+    #ul.menu li {
+        list-style-type: nome;
+    }
+    
+    #ul.menu li {
+        width: 250px;
+        height: 50px;
+        line-height: 50px;
+        background-color: #777;
+        color: #fff;
+        margin-top: 5px;
+        box-sizing: border-box;
+        padding-left: 10px;
+    }
+    
+    .btn {
+        width: 100px;
+        height: 30px;
+        border: 1px solid #ddd;
+        background-color: #0000FF;
+        color: #fff;
+        cursor: pointer;
+    }
+    
+    .campo {
+        width: 300px;
+        height: 30px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+    article {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: #d6d5d5;
+        margin-bottom: 5px;
+    }
 }
