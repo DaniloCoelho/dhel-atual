@@ -33,11 +33,11 @@
                 </li>
                 <li style="display: inline-block;
                 margin: 5px;">
-                    <a href="http://localhost/dhel/index.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
+                    <a href="index.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
                 </li>
                 <li style="display: inline-block;
                 margin: 5px;">
-                    <a href="http://localhost/dhel/cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
+                    <a href="cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
                 
                 </li>
                 
@@ -74,7 +74,7 @@
     </strong>
     <main>
             <aside>
-                <h2><span><a href="http://localhost/dhel/cadastro.php" target="_blank" id="inscreva-se-btn"><li>Cadastre-se</li></span></a>
+                <h2><span><a href="cadastro.php" target="_blank" id="inscreva-se-btn"><li>Cadastre-se</li></span></a>
                 para receber as novidades do nosso salão</h2><br>
                 <h2><span>Nossa missão:</span></h2>
                 <p>Oferecer tratamentos de beleza de alta qualidade, feitos por profissionais altamente treinados e qualificados, em constante melhoria.</p>
@@ -84,56 +84,15 @@
 
             </aside>
             <body onload="iniciaSlider()">
-
                 <img src="" id="moldura" onclick="troca(1)" alt="foto"></img>
-
-                <!--<article class="img" id="moldura" onclick="troca(1)"></article>-->
-            <!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</body>
-        
+                <script src="funcoes.js"></script>
+            </body>    
     </main>
-        
     <footer>
         <br><strong>Endereço:</strong><br>Rua Santa Cruz do monte Castelo, 12 B - Jardim Paraná - São Paulo<br>Tel.
         98546-3550 / 98332-1977<br>&copy; Copyright 2021 HTML.am<br><a href="adm.html">Administrador</a>
         
     </footer>
     <script src="funcoes.js"></script>
+</body>   
 <!-- Code injecte

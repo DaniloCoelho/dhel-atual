@@ -108,7 +108,7 @@ a:hover{
         display: none;
     }
     .mobile{
-        background-image: linear-gradient( rgb(0, 0, 0) , rgb(76, 1, 105));
+        background-image: linear-gradient( rgb(0, 0, 0) , rgb(49, 0, 69));
         text-align: left;
         box-shadow: 0px 0px 0px 0px rgb(157, 157, 197) ;
         border-radius: 2px;
@@ -166,7 +166,7 @@ a:hover{
         margin-right: 0px;
         margin-left: -100%;
         transition: margin-left 0.9s;
-        margin-top: 0px;
+        margin-top: -10px;
         opacity: 0%;
         
 

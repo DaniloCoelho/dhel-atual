@@ -13,15 +13,52 @@
 <body>
 
 
-<!--<?php
+<?php
 
-include_once("conexao.php");
+    include_once("conexao.php");
 
-$filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
-$sql = "select * from usuarios where servico='$filtro'";
-$consulta = mysqli_query($conexao,$sql);
-$registros = mysqli_num_rows($consulta);
-?>-->
+    
+
+    
+
+    
+   
+    /*mysqli_close($conexao);*/
+
+    if(isset($_POST['Enviar'])){
+        $servico = $_POST['servico'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $sexo = $_POST['sexo'];
+        $data = $_POST['data'];
+        $horario = $_POST['horario'];
+        $descricao = $_POST['descricao'];
+
+        $sql_busca = "SELECT * FROM usuarios WHERE data = '$data' AND horario = '$horario' AND servico = '$servico'";
+        $sql_query = $conexao->query($sql_busca) or die("Falha na execução do código SQL: " . $conexao->error .$horario);
+        $quantidade = $sql_query->num_rows;
+
+                if($quantidade ==1){
+                    echo "<script>alert('Esse horario esta indisponivel')</script>";
+
+                }else{
+                    $sql = "insert into usuarios (servico,nome,email,telefone,sexo,data,horario,descricao) values ('$servico','$nome','$email','$telefone','$sexo','$data','$horario','$descricao')";
+                    $salvar = mysqli_query($conexao,$sql);
+                    echo "<script> alert('Agendamento realizado com sucesso!') </script>";
+                    header('Location: processa.php');
+
+                }
+        /*$linhas = mysqli_affected_rows($conexao);
+
+        if ($linhas ==1){
+            echo "<script>alert('Agendamento efetuado com sucesso!')</script>";
+        }else{
+            echo "Agendamento não efetuado. <br> Já existe um usuário com este email!";
+        }*/
+
+    }
+?>
     <header>
         <div id="title">
             <div class="title1">
@@ -43,11 +80,11 @@ $registros = mysqli_num_rows($consulta);
                 </li>
                 <li style="display: inline-block;
                 margin: 5px;">
-                    <a href="http://localhost/dhel/index.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
+                    <a href="index.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
                 </li>
                 <li style="display: inline-block;
                 margin: 5px;">
-                    <a href="http://localhost/dhel/cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
+                    <a href="cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
                 
                 </li>
                 
@@ -68,10 +105,10 @@ $registros = mysqli_num_rows($consulta);
                     <a href="servico.html" class="dropcalculadoras">Serviços</a>
                 </li>   
                 <li class="liprincipal">
-                    <a href="http://localhost/dhel/index.php" target="_blank" class="dropcalculadoras">Agendar um horário</a> 
+                    <a href="index.php" target="_blank" class="dropcalculadoras">Agendar um horário</a> 
                 </li>
                 <li class="liprincipal">
-                    <a href="http://localhost/dhel/cadastro.php" target="_blank"  class="dropcalculadoras">Cadastre-se</a>
+                    <a href="cadastro.php" target="_blank"  class="dropcalculadoras">Cadastre-se</a>
                 </li>
             </ul>
         </nav>
@@ -84,37 +121,49 @@ $registros = mysqli_num_rows($consulta);
             
             <hr><br><br>
 			<h3>Selecione o Serviço desejado para ver os horários reservados:</h3>
-            <form method="get" action="">
-                <input type="radio" name='servico' value='a-b-Cabelo'/> Cabelo<br>
-                <input type='radio' name='servico' value='c-d-Unha'/> Unha<br>
-                <input type='radio' name='servico' value='e-f-Sobrancelha'/> Sobrancelha<br>
+            <form method="post" action="">
+                <input type="radio" name='servico' value='Cabelo'/> Cabelo<br>
+                <input type='radio' name='servico' value='Unha'/> Unha<br>
+                <input type='radio' name='servico' value='Sobrancelha'/> Sobrancelha<br>
                 <input type="hidden" name="filtro" class="campo" id="valor" placeholder="" value="" />
-                <input type="submit" value="Ver Horários" class="btn">
+                <input type="submit" value="Ver Horários" class="btn" name="datahora">
             </form>
 
-            <!--<?php
-                print "Você escolheu:<strong> $filtro</strong><br>";
-                print "Horários Reservados: <strong>$registros</strong><br>" ;
-                              
-                while($exibirRegistros = mysqli_fetch_array($consulta)){
-                				                              
-                    $data=$exibirRegistros[6];
-                    $data = date("d-m-Y", strtotime($data));
-                    $horario=$exibirRegistros[7];
-                    $horario = date("H:i", strtotime($horario));
-                    print "$data"; 
-                    print " -  $horario<br>";                
+            <?php
+                $filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+                $sql = "select * from usuarios where servico='$filtro'"; 
+                $consulta = mysqli_query($conexao,$sql);
+                $registros = mysqli_num_rows($consulta);
+
+                if(isset($_POST['datahora'])){
+                    if(isset($_POST['servico'])){
+                        $filtro = $_POST['servico'];
+                        print "Você escolheu:<strong> $filtro</strong><br>";
+                        print "Horários Reservados: <strong>$registros</strong><br>" ;
+                                    
+                        while($exibirRegistros = mysqli_fetch_array($consulta)){
+                                                                    
+                            $data=$exibirRegistros[6];
+                            $data = date("d-m-Y", strtotime($data));
+                            $horario=$exibirRegistros[7];
+                            $horario = date("H:i", strtotime($horario));
+                            print "$data"; 
+                            print " -  $horario <br>";                
+                        }
+
+                    }else{
+                        echo "<script>alert('Escolha algum serviço.') </script>";
+                    }
                 }
-               
-                mysqli_close($conexao);
+                /*mysqli_close($conexao);*/
                 
-                ?>-->
+            ?>
 
             <hr><br><br>
 			<h3>Preencha todos os campos do formulário baixo:</h3>
            
-				<form method="post" action="processa.php" class="formulario">
-               <strong> Selecione o tipo de Serviço</strong><br>
+				<form method="post" action="" class="formulario">
+                <strong> Selecione o tipo de Serviço</strong><br>
                 <input type="radio" name="servico" value="Cabelo" />
                 Cabelo
                 <br />
@@ -162,10 +211,7 @@ $registros = mysqli_num_rows($consulta);
                 <textarea type="text" name="descricao" placeholder="Descreva o serviço à ser executado" class="campo"
                     maxlength="255" required></textarea><br><br>
 
-                <input type="submit" value="Enviar" class="btn">
-
-
-
+                <input type="submit" value="Enviar" class="btn" name="Enviar">
             </form>
         
 		</section>

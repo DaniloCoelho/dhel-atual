@@ -14,6 +14,10 @@ $linhas = mysqli_affected_rows($conexao);
 
 mysqli_close($conexao);
 
+if(isset($_POST['Ok'])){
+    header('Location:index.html');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +27,7 @@ mysqli_close($conexao);
     <meta charset="utf-8">
 
     <title>Sistema de Cadastro</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="components/_css/style.css">
 
 </head>
 
@@ -42,6 +46,13 @@ mysqli_close($conexao);
                     print "Cadastro não efetuado. <br> Já existe um usuário com este email!";
                 }
                 ?>
+                <br>
+                <div style="text-align:center">
+                <form method="post" style="text-align:center">
+                <input type="submit" value="Ok" name="Ok" style="text-align:center">
+                </form>
+                
+                </div>
 
         </section>
 

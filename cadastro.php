@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <title>Sistema de Cadastro</title>
-    <link rel="stylesheet" href="components/_css/estilo.css">
+    <link rel="stylesheet" href="components/_css/style.css">
 
 </head>
 

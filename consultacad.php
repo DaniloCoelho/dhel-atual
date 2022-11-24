@@ -17,7 +17,7 @@ $registros = mysqli_num_rows($consultacad);
 <head>
     <meta charset="utf-8">
 
-    <title>Usários cadastrados</title>
+    <title>Usuários cadastrados</title>
     <link rel="stylesheet" href="components/_css/estilo.css">
 
 </head>
