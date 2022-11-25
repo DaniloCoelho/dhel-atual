@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços</title>
     <link rel="stylesheet" href="components/_css/style.css">
-    <script language="javascript">
+    <link rel="stylesheet" href="menudropdown.css">
+    
+    <!--<script language="javascript">
 
         function preload() {
         imgs = Array('f1.jpg', 'f2.jpg', 'f3.jpg');
@@ -61,15 +63,67 @@
         tmr = setInterval(trocaFoto, 3000);
     }
     
-        </script>
-      
-    
+    </script>-->
+
 </head>
 
-
 <body>
-
     <header>
+        <div id="title">
+            <div class="title1">
+                <h1 id="logo">DHEL</h1>
+            </div>
+            <div class="title1">
+                <h3></h3>
+            </div>
+        </div>
+        <nav class="web">
+            <ul style="width: 500px;">
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="index.php" >Início</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="servico.html" >Serviços</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="agendar.php" target="_blank" id="inscreva-se-btn" >Agendar um horário</a>
+                </li>
+                <li style="display: inline-block;
+                margin: 5px;">
+                    <a href="cadastro.php" target="_blank" id="inscreva-se-btn" >Cadastre-se</a>
+                
+                </li>
+                
+            </ul>
+        </nav>
+       
+        <nav class="mobile" style="z-index:10 ; clear: both;">
+                <input type="checkbox" name="radio-btn" class="radio">
+                <img src="components/images/menu_horizontal.png" class="menu">
+                <img src="components/images/menu_vertical.png" class="menuv" >
+                <a href="default.php" class="logo">Cabeleireiros Unissex</a>
+            
+            <ul class="ulprincipal">
+                <li class="liprincipal">
+                    <a href="index.php" class="dropcalculadoras">Início</a>
+                </li>
+                <li class="liprincipal">
+                    <a href="servico.html" class="dropcalculadoras">Serviços</a>
+                </li>   
+                <li class="liprincipal">
+                    <a href="agendar.php" target="_blank" class="dropcalculadoras">Agendar um horário</a> 
+                </li>
+                <li class="liprincipal">
+                    <a href="cadastro.php" target="_blank"  class="dropcalculadoras">Cadastre-se</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--<header>
         <div id="title">
             <h1>DHEL</h1>
             <h3>Cabeleireiros Unissex</h3>
@@ -83,7 +137,7 @@
             <a href="http://localhost/dhel/index.php" target="_blank" id="inscreva-se-btn"><li>Agendar um horário</li></a>
             <a href="index.php" target="_blank" id="inscreva-se-btn"><li>Cadastre-se</li></a>
         </ul>
-    </header>
+    </header>-->
     <strong><marquee>Serviços de altíssima
         qualidade com um ótimo custo beneficio. Venha conferir!</marquee></strong>
     <main>
@@ -101,29 +155,36 @@
                 <h2><span><li>Manicure</li><br></span></h2>
                 <p>Experiência comprovada como Manicure;<br>
 
-Conhecimento especializado em técnicas básicas e avançadas para cuidar das unhas, incluindo francesinha, uso de aerógrafo e de gel;<br> 
+                Conhecimento especializado em técnicas básicas e avançadas para cuidar das unhas, incluindo francesinha, uso de aerógrafo e de gel;<br> 
 
-Conhecimento das tendências da estética;<br> 
+                Conhecimento das tendências da estética;<br> 
 
-Conhecimento das normas de higiene e esterilização.</p>
+                Conhecimento das normas de higiene e esterilização.</p>
                 <h2><span><li>Design de Sobrancelhas</li><br></span></h2>
                 <p>Design de sobrancelhas e Micropigmentadora com técnicas de embeleza mento do olhar;<br> Permanente de Cilios, coloração cilios e sobrancelhas;<br> Henna Depilação a Fio facial.</p>
-               
-                
-                
-       
            
         </aside>
         
         <body onload="iniciaSlider()">
-
-        <article class="switch" id="moldura" onclick="troca(1)"</aricle<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <figure>   
-           
-            <img src= "components/images/cartao5.jpg">
-          
-        </figure>         
+            <img src="" id="moldura" onclick="troca(1)" alt="foto"></img>
+            <script src="funcoes.js"></script>
+        </body>
+        
     </main>
+    <br>
+    <div style="display:inline-flex; width:100%;">
+        
+        <div style="width:30% ;">
+            <h3><span>Formas de pagamento</span></h3>
+        </div>
+        <div style="width:70% ;">
+            <img src="components/images/cartao5.jpg" style="width:50%; height:100px">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
             
 
         <footer>
@@ -135,5 +196,5 @@ Conhecimento das normas de higiene e esterilização.</p>
     
 
 </body>
-<script src="script.js"></script>
+<script src="funcoes.js"></script>
 </html>
