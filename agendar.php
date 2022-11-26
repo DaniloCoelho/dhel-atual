@@ -17,14 +17,14 @@
         /*mysqli_close($conexao);*/
 
         if(isset($_POST['Enviar'])){
-            $servico = $_POST['servico'];
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
-            $telefone = $_POST['telefone'];
-            $sexo = $_POST['sexo'];
+            $servico = addslashes($_POST['servico']);
+            $nome = addslashes($_POST['nome']);
+            $email = addslashes($_POST['email']);
+            $telefone = addslashes($_POST['telefone']);
+            $sexo = addslashes($_POST['sexo']);
             $data = $_POST['data'];
             $horario = $_POST['horario'];
-            $descricao = $_POST['descricao'];
+            $descricao = addslashes($_POST['descricao']);
 
             $sql_busca = "SELECT * FROM usuarios WHERE data = '$data' AND horario = '$horario' AND servico = '$servico'";
             $sql_query = $conexao->query($sql_busca) or die("Falha na execução do código SQL: " . $conexao->error .$horario);
@@ -121,14 +121,14 @@
             </form>
 
             <?php
-                $filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+                $filtro = isset($_GET['filtro'])?addslashes($_GET['filtro']):"";
                 $sql = "select * from usuarios where servico='$filtro'"; 
                 $consulta = mysqli_query($conexao,$sql);
                 $registros = mysqli_num_rows($consulta);
 
                 if(isset($_POST['datahora'])){
                     if(isset($_POST['servico'])){
-                        $filtro = $_POST['servico'];
+                        $filtro =  addslashes($_POST['servico']);
                         print "Você escolheu:<strong> $filtro</strong><br>";
                         print "Horários Reservados: <strong>$registros</strong><br>" ;
                                     

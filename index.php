@@ -75,7 +75,7 @@
     
     <main>
             <aside>
-                <h2><span><a href="cadastro.php" target="_blank" id="inscreva-se-btn"><li>Cadastre-se</li></span></a>
+                <h2 class="sumir"><span><a href="cadastro.php" target="_blank" id="inscreva-se-btn"><li>Cadastre-se</li></span></a>
                 para receber as novidades do nosso salão</h2><br>
                 <h2><span>Nossa missão:</span></h2>
                 <p>Oferecer tratamentos de beleza de alta qualidade, feitos por profissionais altamente treinados e qualificados, em constante melhoria.</p>
