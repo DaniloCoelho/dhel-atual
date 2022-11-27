@@ -86,7 +86,7 @@ $registros = mysqli_num_rows($consulta);
     </div>
 <?php
 
-$antigo = isset($_GET['antigo'])?$_GET['antigo']:"";
+$antigo = isset($_GET['antigo'])? addslashes($_GET['antigo']) :"";
 $query = " DELETE FROM usuarios WHERE data<='$antigo'";  
 $result = mysqli_query($conexao,$query);
 

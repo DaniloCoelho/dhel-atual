@@ -2,9 +2,9 @@
 
 include_once("conexao.php");
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$telefone = $_POST['telefone'];
+$nome = addslashes($_POST['nome']) ;
+$email = addslashes($_POST['email']) ;
+$telefone = addslashes($_POST['telefone']) ;
 
 
 $sql = "insert into cadastro (nome,email,telefone) values ('$nome','$email',$telefone)";

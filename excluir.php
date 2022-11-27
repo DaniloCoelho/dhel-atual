@@ -1,7 +1,7 @@
 <?php
 include_once("conexao.php");
 
-$filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+$filtro = isset($_GET['filtro'])? addslashes($_GET['filtro']) :"";
 $query = " DELETE FROM usuarios WHERE data='$filtro'";  
 $consulta = mysqli_query($conexao,$query);
 

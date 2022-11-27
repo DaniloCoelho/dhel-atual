@@ -2,7 +2,7 @@
 
 include_once("conexao.php");
 
-$filtro = isset($_GET['filtro'])?$_GET['filtro']:"";
+$filtro = isset($_GET['filtro'])?addslashes($_GET['filtro']) :"";
 $sql = "select * from cadastro where email  like '%$filtro%' order by email";
 $consultacad = mysqli_query($conexao,$sql);
 $registros = mysqli_num_rows($consultacad);
