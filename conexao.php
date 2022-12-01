@@ -1,8 +1,8 @@
 <?php
 
 $hostname = "localhost";
-$user = "root";
-$password = "";
+$user = "root";//root
+$password = "";//""
 $database = "agenda";
 
 $conexao = mysqli_connect($hostname,$user,$password,$database);

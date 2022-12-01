@@ -84,11 +84,16 @@
                 <p> Respeito, honestidade, transparência e compromisso com o bem estar</p>
 
             </aside>
+            <!--
             <body onload="iniciaSlider()">
                 <img src="" id="moldura" onclick="troca(1)" alt="foto"></img>
                 <script src="funcoes.js"></script>
-            </body>    
-    </main>
+            </body>  -->  
+            <body >
+                <img src="" id="imagem" alt="foto"></img>
+                <script src="json.js"></script>
+            </body> 
+    </main> 
 
     <footer>
         <br><strong>Endereço:</strong><br>Rua Santa Cruz do monte Castelo, 12 B - Jardim Paraná - São Paulo<br>Tel.

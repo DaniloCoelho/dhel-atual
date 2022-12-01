@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 $json_str = '{"id":1, "title":"cabelo1", "image_url": "https://ath2.unileverservices.com/wp-content/uploads/sites/2/2016/05/4-tratamentos-de-cabelo-para-fazer-no-salao.jpg", "created_at":"2022-11-26T12:16.263Z", "updated_at":"2022-11T12:36:16.263Z"}';
 
 //faz o parsing na string, gerando um objeto PHP
@@ -7,7 +7,7 @@ $obj = json_decode($json_str);
 //imprime o conteúdo do objeto
 
 
-?>
+?>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,7 @@ $obj = json_decode($json_str);
                 Id : 
             </td>
             <td>
-                <?php echo "$obj->id"; ?>
+                <!--<?php echo "$obj->id"; ?>-->
             </td>
         </tr>
         <br>
@@ -32,7 +32,7 @@ $obj = json_decode($json_str);
                 Título :
             </td>
             <td>
-                <?php echo " $obj->title"; ?>
+                <!--<?php echo " $obj->title"; ?>--->
 
             </td>
         </tr>
@@ -53,7 +53,7 @@ $obj = json_decode($json_str);
 
             </td>
             <td>
-                <?php echo $obj->created_at; ?>
+                <!--<?php echo $obj->created_at; ?>-->
 
             </td>
         </tr>
@@ -63,13 +63,17 @@ $obj = json_decode($json_str);
                 Atualizado em :
             </td>
             <td>
-                <?php echo $obj->updated_at; ?>
+                <!--<?php echo $obj->updated_at; ?>-->
 
             </td>
         </tr>
+        <img src="" id="campo"></div>
+        <h3 id="h3">io</h3>
+        
         
     </section>
     
-    
+    <!--<script src="funcoes.js"></script>-->
+    <script src="json.js"></script>
 </body>
 </html>

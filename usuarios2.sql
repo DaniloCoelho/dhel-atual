@@ -16,29 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cadastro`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `cadastro`;
+DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8 */;
-CREATE TABLE `cadastro` (
+CREATE TABLE `usuarios` (
   `codigo` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `telefone` varchar(20) NOT NULL,
+  `servico` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `nome` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `telefone` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `sexo` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `data` date NOT NULL,
+  `horario` time NOT NULL,
+  `descricao` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`codigo`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cadastro`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `cadastro` WRITE;
-/*!40000 ALTER TABLE `cadastro` DISABLE KEYS */;
-INSERT INTO `cadastro` VALUES (1,'Domício Natividade Silva','dnatividadesilva@gmail.com','11985463550'),(2,'Maria','Maria@joao.com','11985463550'),(3,'Paulo','paulo@teste','777777777777'),(4,'Pedro','pedro@teste.com','965423156'),(5,'joão','joao@gmail.com','986543201'),(6,'Natividade Silva','construsilva.loja01@gmail.com','11985463550');
-/*!40000 ALTER TABLE `cadastro` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (1,'Unha','Maria Gilvania','gil@gmail.com','983321977','Feminino','2022-09-25','16:46:00','ggggggggggggggg'),(2,'Cabelo','Domicio Natividade Silva','construsilva.loja01@gmail.com','11985463550','Feminino','2022-09-20','17:30:00','Corte social');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-16 14:15:57
+-- Dump completed on 2022-09-16 14:15:58

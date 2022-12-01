@@ -199,7 +199,7 @@
                 </select>Selecione um horário<br>
 
 
-                <textarea type="text" name="descricao" placeholder="Descreva o serviço à ser executado" class="campo"
+                <textarea type="text" name="descricao" placeholder="Descreva o serviço à ser executado" class=""
                     maxlength="255" required></textarea><br><br>
 
                 <input type="submit" value="Enviar" class="btn" name="Enviar">
